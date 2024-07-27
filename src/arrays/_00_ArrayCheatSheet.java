@@ -3,7 +3,7 @@ package arrays;
 public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
 		//1. make an array of 5 Strings
-		
+		String[] things = {"thing1","thing2","thing3","thing4","thing5"};
 		//2. print the third element in the array
 		
 		//3. set the third element to a different value
