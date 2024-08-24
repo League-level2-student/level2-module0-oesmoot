@@ -47,7 +47,7 @@ public class _03_VisualArraySorter extends PApplet {
 
     @Override
     public void settings() {
-        
+        size(500,500);
     }
 
     @Override
@@ -63,12 +63,23 @@ public class _03_VisualArraySorter extends PApplet {
     @Override
     public void draw() {
         background(255,0,0);
-        fill(50,255,0);
-        for(int i=0; i>rects.length;i++) {
-        	
+        fill(0,255,0);
+        for(int i=0; i<rects.length;i++) {
+        	rect(i*(width/rects.length),height,width/rects.length,-rects[i]);
+        }
+        stepSort(rects);
+        if(mousePressed) {
+        	ranRects();
         }
     }
-
+    
+    public void ranRects() {
+    	Random ran = new Random();
+    	for(int i = 0; i<rects.length;i++) {
+        	rects[i] = ran.nextInt(500);
+        	noStroke();
+        }
+    }
     static public void main(String[] passedArgs) {
         PApplet.main(_03_VisualArraySorter.class.getName());
     }
