@@ -29,6 +29,7 @@ public class SwingReview implements ActionListener, KeyListener {
 	JLabel label;
 	JButton button1;
 	JButton button2;
+	int clickMe = 0;
 
 	public void run() throws Exception {
 		// 1. Initialize your JFrame variable as an object of the JFrame class
@@ -107,6 +108,7 @@ public class SwingReview implements ActionListener, KeyListener {
 		// Choice"
 		 if(buttonClicked == button1) {
 			 JOptionPane.showMessageDialog(null, "good choice");
+			 clickMe++;
 		 }
 		// 27. If the "No, Click Me button" was clicked, say "A Better Choice"
 		 if(buttonClicked == button2) {
@@ -114,16 +116,19 @@ public class SwingReview implements ActionListener, KeyListener {
 		 }
 		// 28. If the "Click Me" button is clicked 3 times, change the text of the button
 		// to say "Stop Clicking Me"
-
+		 if(clickMe>=3) {
+			 button1.setText("stop clicking me");
+		 }
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// 30. Save the key typed by the user to a variable
 		// HINT: Look at the methods that KeyEvent e has
-
+		char keyPressed = e.getKeyChar();
+		
 		// 31. Use JOptionPane pop-up to tell the user which key they typed
-
+		JOptionPane.showMessageDialog(null, keyPressed);
 	}
 
 	@Override
